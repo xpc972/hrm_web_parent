@@ -3,11 +3,12 @@ import Register from './views/Register.vue'
 import NotFound from './views/404.vue'
 import Home from './views/Home.vue'
 import Page4 from './views/nav2/Page4.vue'
-import Page5 from './views/nav2/Page5.vue'
-import Page6 from './views/nav3/Page6.vue'
 import echarts from './views/charts/echarts.vue'
 import Department from './views/archives/department.vue'
 import Role from './views/archives/role.vue'
+import CourseType from './views/course/courseType.vue'
+import TenantType from './views/tenant/tenantType.vue'
+import Tenant from './views/tenant/tenant.vue'
 import Course from './views/course/course.vue'
 
 
@@ -30,7 +31,6 @@ let routes = [
         name: '',
         hidden: true
     },
-    //{ path: '/main', component: Main },
     {
         path: '/',
         component: Home,
@@ -40,7 +40,7 @@ let routes = [
         children: [
             { path: '/echarts', component: echarts, name: '首页' }
         ]
-    },
+    }/*,
     {
         path: '/',
         component: Home,
@@ -50,7 +50,7 @@ let routes = [
             { path: '/department', component: Department, name: '部门管理' },
             { path: '/role', component: Role, name: '角色管理' }
         ]
-    }
+    }*/
     ,
     {
         path: '/',
@@ -58,28 +58,18 @@ let routes = [
         name: '课程中心',
         iconCls: 'el-icon-message',//图标样式class
         children: [
-            { path: '/course', component: Course, name: '课程中心'},
-            { path: '/course', component: Course, name: '课程类型'}
+            { path: '/courseType', component: CourseType, name: '课程类型'},
+            { path: '/course', component: Course, name: '课程'}
         ]
     },
     {
         path: '/',
         component: Home,
-        name: '导航二',
-        iconCls: 'fa fa-id-card-o',
+        name: '机构管理',
+        iconCls: 'el-icon-message',//图标样式class
         children: [
-            { path: '/page4', component: Page4, name: '页面4' },
-            { path: '/page5', component: Page5, name: '页面5' }
-        ]
-    },
-    {
-        path: '/',
-        component: Home,
-        name: '',
-        iconCls: 'fa fa-address-card',
-        leaf: true,//只有一个节点
-        children: [
-            { path: '/page6', component: Page6, name: '导航三' }
+            { path: '/tenantType', component: TenantType, name: '机构类型'},
+            { path: '/tenant', component: Tenant, name: '机构管理'}
         ]
     },
     {
